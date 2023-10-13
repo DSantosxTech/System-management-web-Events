@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EventoswebApplication {
 
     public static void main(String[] args) {
+        // Inicializa a aplicação Spring Boot
         SpringApplication.run(EventoswebApplication.class, args);
     }
-
 }

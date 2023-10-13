@@ -12,16 +12,18 @@ import javax.sql.DataSource;
 @Configuration
 public class DataConfiguration {
 
+    // Configura e retorna um DataSource para o aplicativo
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");  // Use o driver do MySQL mais recente
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver"); // Usando o driver JDBC mais recente do MySQL
         dataSource.setUrl("jdbc:mysql://localhost:3306/eventosapp");
         dataSource.setUsername("root");
         dataSource.setPassword("root");
         return dataSource;
     }
 
+    // Configura e retorna um JpaVendorAdapter para o aplicativo
     @Bean
     public JpaVendorAdapter jpaVendorAdapter() {
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
