@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class IndexController {
-    @GetMapping("/eventos/index")
+    @GetMapping("/index")
     public String showIndex() {
         return "index";
     }
