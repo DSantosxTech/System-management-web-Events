@@ -1,26 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns:th="http://thymeleaf.org"
+>
 <head>
-    <meta charset="UTF-8">
-    <title>EventosAPP</title>
+	<title>EventosApp</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+	<!--Import materialize.css-->
+	<link href="materialize/css/materialize.min.css" media="screen,projection" rel="stylesheet" type="text/css"/>
+
+	<!--Let browser know website is optimized for mobile-->
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+	<link href="style/styleCss.css" rel="stylesheet"/>
 </head>
 <body>
-<h1>Cadastro de Eventos:</h1>
-<form method="post">
-    <!-- Campo de entrada para o nome do evento -->
-    Nome: <input name="nome" type="text" value="" />
 
-    <!-- Campo de entrada para o local do evento -->
-    Local: <input name="local" type="text" value="" />
+<header>
+	<nav class="menu">
+		<div class="nav-wrapper">
+			<a class="brand-logo" href="#">Cadastro de Eventos:</a>
+			<ul class="right hide-on-med-and-down" id="nav-mobile">
+				<li><a class="waves-effect waves-light btn" href="/eventos"><i class="material-icons left">format_list_bulleted</i>Lista
+					de Eventos</a></li>
+			</ul>
+		</div>
+	</nav>
 
-    <!-- Campo de entrada para a data do evento -->
-    Data: <input name="data" type="date" value="" />
+</header>
 
-    <!-- Campo de entrada para a hora do evento -->
-    Hora: <input name="hora" type="time" value="" />
 
-    <!-- Botão para enviar o formulário e salvar o evento -->
-    <button type="submit">Salvar</button>
-</form>
+<th:block th:include="mensagemValidacao"></th:block>
+<div class="container formEvento">
+
+	<form class="container" method="post">
+		Nome: <input name="nome" type="text" value=""/>
+		<div class="row">
+			<div class="input-field col s6">
+				Local: <input name="local" type="text" value=""/>
+			</div>
+			<div class="input-field col s3">
+				Data: <input name="data" type="date" value=""/>
+			</div>
+			<div class="input-field col s3">
+				Horario: <input name="horario" type="time" value=""/>
+			</div>
+		</div>
+		<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+
+	</form>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="materialize/js/materialize.min.js" type="text/javascript"></script>
 </body>
+
+
 </html>
